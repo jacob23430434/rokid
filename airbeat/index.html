@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>凌空节拍 AirBeat · MVP 原型</title>
+  <link rel="stylesheet" href="css/airbeat.css">
+</head>
+<body>
+  <div id="stage">
+    <video id="cam" playsinline muted></video>
+    <canvas id="view"></canvas>
+    <div id="prompt"></div>
+    <div id="topbar"><button class="small" id="btn-exit">退出</button></div>
+    <div id="debug"></div>
+
+    <div class="panel" id="panel-start">
+      <h1>凌空节拍 <small>AirBeat · MVP 原型</small></h1>
+      <p>面前的空气里浮出一组鼓。向下一挥，鼓就响；挥得越重，声音越大、光越亮。</p>
+      <button class="primary" id="btn-camera">摄像头手势</button>
+      <button id="btn-pointer">鼠标 / 触屏</button>
+      <div><label class="filebtn">加载回放日志<input type="file" id="file-replay" accept=".json" hidden></label></div>
+      <p class="error" id="start-error"></p>
+      <p class="note">摄像头模式用 MediaPipe Hands 在本机识别双手，画面不上传。<br>键盘 D F J K 也能敲四面鼓（按住 Shift 为重击）。</p>
+    </div>
+
+    <div class="panel" id="panel-menu" hidden>
+      <h1>准备好了</h1>
+      <p id="menu-info"></p>
+      <button id="btn-free">自由练习</button>
+      <button class="primary" id="btn-song1">《初光》★</button>
+      <button id="btn-song2">《初光》★★</button>
+      <div><button class="small" id="btn-recal">重新校准</button> <button class="small" id="btn-download" hidden>下载上一局回放日志</button></div>
+      <label class="check"><input type="checkbox" id="chk-record"> 录制手部数据（用于离线回放调参）</label>
+    </div>
+
+    <div class="panel" id="panel-result" hidden>
+      <div class="grade" id="res-grade">A</div>
+      <div id="res-score"></div>
+      <div class="stats" id="res-stats"></div>
+      <p id="res-comment"></p>
+      <button class="primary" id="btn-again">再来一首</button>
+      <button id="btn-up" hidden>升一星</button>
+      <button id="btn-back">返回</button>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
