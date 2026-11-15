@@ -1,0 +1,13 @@
+{
+  "name": "airbeat-mvp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "凌空节拍（AirBeat）MVP 浏览器原型：判定层 + 4 鼓 + 三层力度 + 1 首曲",
+  "scripts": {
+    "test": "node --test",
+    "start": "python3 -m http.server 8080",
+    "charts": "node tools/make-charts.mjs",
+    "fixture": "node tools/make-fixture.mjs"
+  }
+}
